@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{F03DF508-8509-4F69-B30A-EDD9B7AD1453}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SVSPlayer.Features/Games/Components/GamesSwitcher.razor">
+    <Files>
+      <File FileName="SVSPlayer/Pages/Index.razor" />
+      <File FileName="SVSPlayer.Features/Games/Components/GamesSwitcher.razor" Line="2" Column="18" />
+      <File FileName="SVSPlayer.Features/SVSPlayer.Features.csproj" Line="7" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SVSPlayer" expanded="True">
+            <Node name="SVSPlayer" expanded="True">
+              <Node name="Pages" expanded="True" />
+            </Node>
+            <Node name="SVSPlayer.Features" expanded="True">
+              <Node name="Games" expanded="True">
+                <Node name="Components" expanded="True" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.SVSPlayer PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

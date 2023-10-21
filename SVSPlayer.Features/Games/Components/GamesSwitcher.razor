@@ -1,0 +1,57 @@
+@using SVSPlayer.Features.Games.Models
+@inject IGamesService GamesService
+
+@if (_currentGame != null)
+{
+    <div class="games-switcher">
+        <div @onclick="prevGame" class="gs-prev">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="gs-center" @onclick="() => Console.WriteLine("HUHU")">@_currentGame.Opponent</div>
+        <div @onclick="nextGame" class="gs-next">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+    </div>
+}
+
+@code {
+    private List<GameEntity>? _games;
+    private GameEntity? _currentGame;
+    //
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+             await reload();
+             StateHasChanged();
+        }
+    }
+
+    private async Task reload()
+    {
+        _games = (await GamesService.GetCurrentGamesAsync()).ToList();
+
+        _currentGame = await GamesService.GetCurrentAsync();
+    }
+
+    void prevGame()
+    {
+        if (_currentGame != null)
+        {
+            var newCurr = _games?.IndexOf(_currentGame) - 1 ?? 0;
+            newCurr = (newCurr < 0) ? 0 : newCurr;
+            _currentGame = _games?.ElementAt(newCurr);
+        }
+    }
+
+    void nextGame()
+    {
+        if (_currentGame != null)
+        {
+            var newCurr = _games?.IndexOf(_currentGame) + 1 ?? 0;
+            newCurr = ((newCurr > _games?.Count - 1) ? (_games?.Count - 1) : newCurr) ?? 0;
+            _currentGame = _games?.ElementAt(newCurr);
+        }
+    }
+
+}
