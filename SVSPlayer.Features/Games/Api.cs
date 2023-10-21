@@ -1,10 +1,8 @@
-using System.Text.Json;
-using FlintSoft.Extensions;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using SVSPlayer.Features.Extensions;
 using SVSPlayer.Features.Games.Models;
+using System.Text.Json;
 
 namespace SVSPlayer.Features.Games;
 
@@ -17,7 +15,7 @@ public static class Api
         group.MapGet("/currentGames", handleCurrentGames);
         return group;
     }
-    
+
     private static async Task<IResult> handleUpload(HttpRequest req, IGamesService gamesService)
     {
         try
@@ -27,9 +25,9 @@ public static class Api
             {
                 return Results.BadRequest("No Games");
             }
-            
+
             await gamesService.AddGamesAsync(games);
-    
+
             return Results.Ok();
         }
         catch (Exception e)
@@ -41,7 +39,7 @@ public static class Api
     private static async Task<GameEntity?> handleCurrent(HttpRequest req, IGamesService gamesService)
     {
         var result = await gamesService.GetCurrentAsync();
-        
+
         return result;
     }
 

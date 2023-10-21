@@ -1,18 +1,19 @@
-@using SVSPlayer.Features.Games.Models
-@inject IGamesService GamesService
+﻿@inject IGamesService GamesService
 
 @if (_currentGame != null)
 {
     <div class="games-switcher">
-        <div @onclick="prevGame" class="gs-prev">
+        <div @on class="gs-prev" @onclick="prevGame">
             <i class="fa-solid fa-arrow-left"></i>
         </div>
-        <div class="gs-center" @onclick="() => Console.WriteLine("HUHU")">@_currentGame.Opponent</div>
+        <div class="gs-center">@_currentGame.Opponent</div>
         <div @onclick="nextGame" class="gs-next">
             <i class="fa-solid fa-arrow-right"></i>
         </div>
     </div>
 }
+
+<div></div>
 
 @code {
     private List<GameEntity>? _games;
@@ -22,8 +23,8 @@
     {
         if (firstRender)
         {
-             await reload();
-             StateHasChanged();
+            await reload();
+            StateHasChanged();
         }
     }
 

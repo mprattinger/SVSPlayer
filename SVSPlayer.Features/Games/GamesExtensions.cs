@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 
 namespace SVSPlayer.Features.Games;
 
@@ -8,7 +8,7 @@ public static class GamesExtensions
     {
         app.MapGroup("/api/games")
             .MapGamesApi();
-        
+
         return app;
     }
 }

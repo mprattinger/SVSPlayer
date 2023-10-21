@@ -1,5 +1,4 @@
-using Azure.Data.Tables;
-using FlintSoft.Extensions;
+﻿using FlintSoft.Extensions;
 using Microsoft.Extensions.Logging;
 using SVSPlayer.Features.Games.Models;
 using SVSPlayer.Infrastructure;
@@ -22,14 +21,14 @@ public class GamesService : IGamesService
 {
     private readonly ILogger<GamesService> _logger;
     private readonly IRepository<GameEntity> _repository;
-    
+
     private const string KEY = "GAMES";
-    
+
     public GamesService(ILogger<GamesService> logger, IRepository<GameEntity> repository)
     {
         _logger = logger;
         _repository = repository;
-        
+
         _repository.SetPartitionKey(KEY);
     }
 
@@ -55,7 +54,7 @@ public class GamesService : IGamesService
     {
         var y1 = DateTime.Now.Month >= 7 ? DateTime.Now.Year : DateTime.Now.Year - 1;
         var y2 = DateTime.Now.Month >= 7 ? DateTime.Now.Year + 1 : DateTime.Now.Year;
-        
+
         var s = new DateTime(y1, 7, 1).Date.ToUniversalTime();
         var e = new DateTime(y2, 7, 1).Date.ToUniversalTime();
 
@@ -72,7 +71,7 @@ public class GamesService : IGamesService
             return t;
         });
     }
-    
+
     public async Task<IEnumerable<GameEntity>> GetAllGamesAsync() => await _repository.GetAllAsync();
 
     public async Task<GameEntity?> GetGameAsync(string rowKey) => await _repository.GetByKeyAsync(rowKey);
@@ -80,8 +79,8 @@ public class GamesService : IGamesService
     public async Task AddOrUpdateGameAsync(GameEntity game) => await _repository.AddOrUpdateAsync(game);
 
     public async Task<IEnumerable<GameEntity>> GetWithFilterAsync(string filter) => await _repository.GetWithFilterAsync(filter);
-    
+
     public async Task AddGamesAsync(IEnumerable<GameEntity> games) => await _repository.AddMultipleAsync(games);
-    
+
     public async Task DeleteGameAsync(string rowKey) => await _repository.RemoveByKeyAsync(rowKey);
 }

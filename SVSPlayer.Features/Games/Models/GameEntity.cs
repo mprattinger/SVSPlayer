@@ -1,4 +1,4 @@
-using SVSPlayer.Infrastructure;
+﻿using SVSPlayer.Infrastructure;
 
 namespace SVSPlayer.Features.Games.Models;
 

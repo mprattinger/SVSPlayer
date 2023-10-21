@@ -1,10 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVSPlayer", "SVSPlayer\SVSPlayer.csproj", "{F03DF508-8509-4F69-B30A-EDD9B7AD1453}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVSPlayer", "SVSPlayer\SVSPlayer.csproj", "{F03DF508-8509-4F69-B30A-EDD9B7AD1453}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVSPlayer.Features", "SVSPlayer.Features\SVSPlayer.Features.csproj", "{A71B27A0-C80A-438A-8734-C5398214556E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVSPlayer.Infrastructure", "SVSPlayer.Infrastructure\SVSPlayer.Infrastructure.csproj", "{1D681D45-8C03-470F-A32A-F9706963D16C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVSPlayer.Infrastructure", "SVSPlayer.Infrastructure\SVSPlayer.Infrastructure.csproj", "{1D681D45-8C03-470F-A32A-F9706963D16C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVSPlayer.Features", "SVSPlayer.Features\SVSPlayer.Features.csproj", "{91361767-6905-498B-BF55-C641D7209267}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +19,19 @@ Global
 		{F03DF508-8509-4F69-B30A-EDD9B7AD1453}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F03DF508-8509-4F69-B30A-EDD9B7AD1453}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F03DF508-8509-4F69-B30A-EDD9B7AD1453}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A71B27A0-C80A-438A-8734-C5398214556E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A71B27A0-C80A-438A-8734-C5398214556E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A71B27A0-C80A-438A-8734-C5398214556E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A71B27A0-C80A-438A-8734-C5398214556E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1D681D45-8C03-470F-A32A-F9706963D16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1D681D45-8C03-470F-A32A-F9706963D16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D681D45-8C03-470F-A32A-F9706963D16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D681D45-8C03-470F-A32A-F9706963D16C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91361767-6905-498B-BF55-C641D7209267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91361767-6905-498B-BF55-C641D7209267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91361767-6905-498B-BF55-C641D7209267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91361767-6905-498B-BF55-C641D7209267}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D24895C-E972-4249-9BEA-AE268492E891}
 	EndGlobalSection
 EndGlobal
